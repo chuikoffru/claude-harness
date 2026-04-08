@@ -1,0 +1,45 @@
+telegram:
+  bot_token: "${TELEGRAM_BOT_TOKEN}"
+  group_id: "${TELEGRAM_GROUP_ID}"
+  allowed_users: []
+
+claude:
+  max_concurrent: 5
+  default_model: "sonnet"
+  allowed_tools:
+    - Read
+    - Edit
+    - Write
+    - Bash
+    - Agent
+
+ollama:
+  host: "http://localhost:11434"
+  embed_model: "qwen3-embedding"
+  # reranker: QMD uses its built-in GGUF model (Qwen3-Reranker-0.6B-Q8_0)
+  # no Ollama reranker needed — Ollama doesn't have native rerank API yet
+
+qmd:
+  mode: "http"
+  port: 3100
+  collections:
+    - name: "harness-memory"
+      path: "./workspace/memory"
+    - name: "harness-sessions"
+      path: "./workspace/sessions"
+    - name: "harness-instructions"
+      path: "./workspace/instructions"
+
+memory:
+  auto_flush: true
+  daily_consolidation: "0 3 * * *"
+
+heartbeat:
+  enabled: true
+  interval_minutes: 30
+  prompt: "Check notifications and tasks. Report anything that needs attention."
+
+# Channels are auto-discovered from Telegram forum topics.
+# You can also pre-define them here. Auto-discovered topics
+# will be merged with these (config takes priority).
+channels: {}

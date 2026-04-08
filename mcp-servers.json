@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "qmd": {
+      "command": "qmd",
+      "args": ["mcp"],
+      "env": {
+        "QMD_EMBED_MODEL": "ollama:qwen3-embedding"
+      }
+    },
+    "harness": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp-server.ts"],
+      "cwd": "/sessions/eloquent-inspiring-euler/claude-harness"
+    }
+  }
+}

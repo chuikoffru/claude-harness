@@ -1,0 +1,25 @@
+# Environment & secrets
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+
+# Workspace data (runtime state, user memory, sessions)
+workspace/
+
+# Bun
+bun.lockb
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript build output
+dist/
+*.tsbuildinfo
